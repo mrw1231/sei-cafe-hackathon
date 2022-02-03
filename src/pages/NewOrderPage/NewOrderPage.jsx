@@ -35,6 +35,7 @@ export default function NewOrderPage({ user, setUser }) {
   
   useEffect(function() {
     async function getItems() {
+      // Fetch all items
       const items = await itemsAPI.getAll();
       categoriesRef.current = items.reduce((acc, item) => {
         const cat = item.category.name;
